@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 
 const HomeContainer = styled.div`
   display: flex;
@@ -53,6 +54,8 @@ const ActionButton = styled.button`
 `;
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -68,7 +71,7 @@ export default function Home() {
           <Card>
             <h2>Safe, Engaging, and Personalized</h2>
             <p>Kin adapts to different neurodivergent profiles and age ranges to provide the most supportive experience for your child.</p>
-            <ActionButton>Get Started</ActionButton>
+            <ActionButton onClick={() => router.push('/companion')}>Get Started</ActionButton>
           </Card>
           
           <div>
